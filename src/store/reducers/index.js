@@ -1,4 +1,4 @@
-import { BUY_ITEM, REMOVE_FEATURES } from "../actions";
+import { BUY_ITEM, REMOVE_FEATURE } from "../actions";
 
 const initialState = {
     additionalPrice: 0,
@@ -30,13 +30,13 @@ export const reducer = (state = initialState, action) => {
                     ...state.car,
                     features: [...state.car.features, action.payload]}
             }
-        case REMOVE_FEATURES:
+        case REMOVE_FEATURE:
             return {
                 ...state,
                 additionalPrice: state.additionalPrice - action.payload.price,
                 car: {
                     ...state.car,
-                    features: state.car.features.filter(id => id === action.payload.id)
+                    features: state.car.features.filter(f => f.id !== action.payload.id)
                 }
             }
             // console.log(state.store);

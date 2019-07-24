@@ -27,13 +27,13 @@ class App extends React.Component {
 
     // MAP ID CHECKING, NOT WORKING
 
-    this.props.car.features.map(f => {
-      if(item.id === f.id){
-        return console.log("cannot add same item more than once");
-      } else {
-        return this.props.buyItem(item);
-      }
-    })
+    // this.props.car.features.map(f => {
+    //   if(item.id === f.id){
+    //     return console.log("cannot add same item more than once");
+    //   } else {
+    //     return this.props.buyItem(item);
+    //   }
+    // })
     
     return this.props.buyItem(item);
 

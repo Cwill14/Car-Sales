@@ -1,4 +1,4 @@
-export const REMOVE_FEATURES = 'REMOVE_FEATURES';
+export const REMOVE_FEATURE = 'REMOVE_FEATURES';
 export const BUY_ITEM = 'BUY_ITEM';
 
 export const buyItem = item => dispatch  => {
@@ -6,5 +6,5 @@ export const buyItem = item => dispatch  => {
     dispatch({ type: BUY_ITEM, payload: item})
 }
 export const removeFeature = item => dispatch  => {
-    dispatch({ type: REMOVE_FEATURES, payload: item })
+    dispatch({ type: REMOVE_FEATURE, payload: item })
 }
