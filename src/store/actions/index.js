@@ -5,6 +5,6 @@ export const buyItem = item => dispatch  => {
     console.log("item from AC: ", item);
     dispatch({ type: BUY_ITEM, payload: item})
 }
-export const removeFeature = id => dispatch  => {
-    dispatch({ type: REMOVE_FEATURES, payload: id })
+export const removeFeature = item => dispatch  => {
+    dispatch({ type: REMOVE_FEATURES, payload: item })
 }

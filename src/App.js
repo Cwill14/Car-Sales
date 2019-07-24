@@ -17,29 +17,33 @@ class App extends React.Component {
   //   }
   // }
 
-  removeFeature = id => {
+  removeFeature = item => {
     // dispatch an action here to remove an item
-    this.props.removeFeature(id);
+    this.props.removeFeature(item);
   };
 
-  buyItem = (item) => {
+  buyItem = item => {
     // dipsatch an action here to add an item
 
-    // this.props.car.features.map(f => {
-    //   if(item.id === f.id){
-    //     return null
-    //   }
-    // })
+    // MAP ID CHECKING, NOT WORKING
 
-    // INCLUDES 
+    this.props.car.features.map(f => {
+      if(item.id === f.id){
+        return console.log("cannot add same item more than once");
+      } else {
+        return this.props.buyItem(item);
+      }
+    })
+    
+    return this.props.buyItem(item);
+
+    // INCLUDES , NOT WORKING
     // console.log(this.props.car.features.toString());
     // this.props.car.features.map(f => {
     //   if(this.props.car.features.toString().includes(){
         
     //   } else{return null}
     // })
-    this.props.buyItem(item);
-
   };
 
   render() {
@@ -48,7 +52,7 @@ class App extends React.Component {
       <div className="boxes">
       <div className="box">
         <Header car={this.props.car} />
-        <AddedFeatures car={this.props.car} />
+        <AddedFeatures car={this.props.car} removeFeature={this.removeFeature} />
       </div>
       <div className="box">
         <AdditionalFeatures store={this.props.store} buyItem={this.buyItem} />
