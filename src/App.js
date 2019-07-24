@@ -9,13 +9,6 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 class App extends React.Component {
-  // const state = {};
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-
-  //   }
-  // }
 
   removeFeature = item => {
     // dispatch an action here to remove an item
