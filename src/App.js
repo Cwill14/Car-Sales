@@ -16,33 +16,15 @@ class App extends React.Component {
   };
 
   buyItem = item => {
-    // dipsatch an action here to add an item
-
-    // MAP ID CHECKING, NOT WORKING
-
-    // this.props.car.features.map(f => {
-    //   if(item.id === f.id){
-    //     return console.log("cannot add same item more than once");
-    //   } else {
-    //     return this.props.buyItem(item);
-    //   }
-    // })
-    
-    return this.props.buyItem(item);
-
-    // INCLUDES , NOT WORKING
-    // console.log(this.props.car.features.toString());
-    // this.props.car.features.map(f => {
-    //   if(this.props.car.features.toString().includes(){
-        
-    //   } else{return null}
-    // })
+    return !this.props.car.features.includes(item)
+    ? this.props.buyItem(item)
+    : null
   };
 
   render() {
 
     return (
-      <div className="boxes">
+      <div id="boxes">
       <div className="box">
         <Header car={this.props.car} />
         <AddedFeatures car={this.props.car} removeFeature={this.removeFeature} />
